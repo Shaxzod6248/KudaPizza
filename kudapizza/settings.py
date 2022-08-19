@@ -17,7 +17,9 @@ DEBUG = env('DEBUG')
 
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+
+]
 
 
 INSTALLED_APPS = [

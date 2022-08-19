@@ -2,6 +2,7 @@ db.sqlite
 virtual
 Virtual
 media
+db.sqlite3
 
 .env
 static
