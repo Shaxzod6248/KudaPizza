@@ -18,7 +18,7 @@ DEBUG = env('DEBUG')
 
 
 ALLOWED_HOSTS = [
-
+    '*'
 ]
 
 
