@@ -99,6 +99,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 CORS_ALLOW_ALL_ORIGINS = True
-
+MEDIA_ROOT = env('MEDIA_ROOT')
+STATIC_ROOT = env('STATIC_ROOT')
 STATIC_URL = 'static/'
+MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

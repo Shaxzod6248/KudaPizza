@@ -14,6 +14,9 @@ def validate_file_extension(value):
 class Category(models.Model):
     name = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     image = models.ImageField(upload_to='kudapizza')
