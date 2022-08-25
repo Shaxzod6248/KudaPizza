@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+
 from .models import *
 from rest_framework import viewsets
 from .serializers import *
@@ -12,6 +14,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    # permission_classes = [IsAuthenticatedOrReadOnly]
 
 
 class OrderViewSet(viewsets.ModelViewSet):

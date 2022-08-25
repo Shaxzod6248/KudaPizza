@@ -13,6 +13,7 @@ def validate_file_extension(value):
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='category', default="empty.webp")
 
     def __str__(self):
         return self.name

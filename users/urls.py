@@ -4,10 +4,13 @@ from .views import *
 from rest_framework.routers import DefaultRouter
 
 
-router = DefaultRouter()
-router.register('profiles', ProfileViewSet)
+# router = DefaultRouter()
+# router.register('profiles', ProfileViewSet)
 
 
 urlpatterns = [
-    path('', include(router.urls))
+    # path('', include(router.urls)),
+    path('login/', login_user),
+    path('logout/', logout_user),
+    path('register/', register_user)
 ]
