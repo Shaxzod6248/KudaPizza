@@ -13,17 +13,21 @@ def validate_file_extension(value):
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='category', default="empty.webp")
+    image = models.ImageField(upload_to='category', default="category/empty.webp")
 
     def __str__(self):
         return self.name
 
 
 class Product(models.Model):
-    image = models.ImageField(upload_to='kudapizza')
-    name = models.CharField(max_length=50)
-    description = models.TextField(blank=True,null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='kudapizza')
+    name_uz = models.CharField(max_length=50, null=True)
+    name_en = models.CharField(max_length=50, null=True)
+    name_ru = models.CharField(max_length=50, null=True)
+    definition_uz = models.TextField(blank=True, null=True)
+    definition_en = models.TextField(blank=True, null=True)
+    definition_ru = models.TextField(blank=True, null=True)
     price = models.FloatField()
 
 
