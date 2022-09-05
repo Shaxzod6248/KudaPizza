@@ -12,11 +12,6 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 
 
-# class ProfileViewSet(viewsets.ModelViewSet):
-#     queryset = User.objects.all()
-#     serializer_class = ProfileSerializer
-
-
 @api_view(["GET"])
 def logout_user(request):
     request.user.auth_token.delete()

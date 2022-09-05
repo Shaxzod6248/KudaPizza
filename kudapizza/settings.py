@@ -39,10 +39,10 @@ INSTALLED_APPS = [
     'django_filters',
 ]
 
-REST_FRAMEWORK = {
 
+REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
@@ -62,7 +62,9 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
+
 ROOT_URLCONF = 'kudapizza.urls'
+
 
 TEMPLATES = [
     {
@@ -79,6 +81,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 WSGI_APPLICATION = 'kudapizza.wsgi.application'
 DATABASES = {
     'default': {
@@ -86,9 +90,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -117,4 +118,3 @@ STATIC_ROOT = env('STATIC_ROOT')
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
